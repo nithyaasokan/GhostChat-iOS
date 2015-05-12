@@ -23,7 +23,7 @@
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chatCell" textLabel="idA-uW-R5j" detailTextLabel="X0d-nq-bXa" rowHeight="38" style="IBUITableViewCellStyleSubtitle" id="Bx5-nn-Cca">
+                                    <tableViewCell contentMode="redraw" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chatCell" textLabel="idA-uW-R5j" detailTextLabel="X0d-nq-bXa" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="Bx5-nn-Cca">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bx5-nn-Cca" id="PA4-jB-fSJ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -67,14 +67,20 @@
                                 <rect key="frame" x="149" y="140" width="435" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="X4I-BO-ixH"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Guide" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJi-Rl-lOD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nits" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJi-Rl-lOD">
                                 <rect key="frame" x="16" y="140" width="121" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="kno-Qy-O5c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="3gs-UQ-ALE"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYk-CA-WuL">
                                 <rect key="frame" x="407" y="178" width="86" height="30"/>

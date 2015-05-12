@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 
 
-class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate {
+class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate, UITextFieldDelegate {
 
     // MARK: - Globals
     
@@ -36,14 +36,18 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     
     //  CoreBluetooth Central Stuff
     var myCentralManager = CBCentralManager()
-    var peripheralArray = [CBPeripheral]() // create now empty array.
-  
-    
+    var peripheralArray = [CBPeripheral]() // create now empty array.    
     
     // MARK: - UI Stuff
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var myTextField: UITextField!
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        myTextField.resignFirstResponder()
+        return true
+    }
 
     @IBAction func sendButtonPressed(sender: UIButton) {
         advertiseNewName(myTextField.text)
@@ -126,7 +130,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             println("We are ON!")
             
             advertiseNewName("uh, hello?")
-/*
+
             // Prep Advertising Packet for Periperhal
             let manufacturerData = identifer.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
             
@@ -144,7 +148,6 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             dataToBeAdvertisedGolbal = dataToBeAdvertised
             // Start Advertising The Packet
             myPeripheralManager?.startAdvertising(dataToBeAdvertised)
-  */
             
             break
         case .PoweredOff:
